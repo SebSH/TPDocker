@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  custom:
+    build: 'mon_image'
+
+  database:
+    image:  'mariadb'
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=test
+    ports: 
+      - '30000'
+  adminer:
+    image: 'adminer'
+    ports:
+      - '50000'
